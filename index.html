@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CENADURÍA LAS COMADRES</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="images/icon-192.png">
+
+</head>
+<body>
+  <h2>CENADURÍA<br>LAS COMADRES</h2>
+  <img src="images/Becky_and_mother.jpg" alt="Logo de la cenaduría">
+  <label for="tacos">Tacos dorados ($12):</label>
+  <input type="number" id="tacos" min="0">
+
+  <label for="enchiladas">Enchiladas ($20):</label>
+  <input type="number" id="enchiladas" min="0">
+
+  <label for="sopes">Sopes ($15):</label>
+  <input type="number" id="sopes" min="0">
+
+  <label for="tostadas">Tostadas ($13):</label>
+  <input type="number" id="tostadas" min="0">
+
+  <label for="aguas">Aguas frescas ($10):</label>
+  <input type="number" id="aguas" min="0">
+
+  <button onclick="calcular()">Calcular total y generar ticket</button>
+
+  <h3>Total: $<span id="total">0.00</span></h3>
+
+  <h4>Ticket:</h4>
+  <pre id="ticket"></pre>
+  <button onclick="guardarTicket()">Guardar ticket</button>
+
+  <script src="script.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(reg => console.log('Service Worker registrado ✅'))
+      .catch(err => console.error('Error registrando SW:', err));
+  }
+</script>
+
+</body>
+</html>
