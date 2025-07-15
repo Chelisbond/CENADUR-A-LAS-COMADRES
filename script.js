@@ -11,13 +11,22 @@ function generarFolio() {
 let ultimoTicket = '';
 
 function calcular() {
-  const productos = [
-    { nombre: "Tacos dorados", precio: 12, cantidad: parseInt(document.getElementById("tacos").value) || 0 },
-    { nombre: "Enchiladas", precio: 20, cantidad: parseInt(document.getElementById("enchiladas").value) || 0 },
-    { nombre: "Sopes", precio: 15, cantidad: parseInt(document.getElementById("sopes").value) || 0 },
-    { nombre: "Tostadas", precio: 13, cantidad: parseInt(document.getElementById("tostadas").value) || 0 },
-    { nombre: "Aguas frescas", precio: 10, cantidad: parseInt(document.getElementById("aguas").value) || 0 }
+const productos = [
+    { nombre: "Pozole Gde", precio: 70, cantidad: parseInt(document.getElementById("pozole_gde").value) || 0 },
+    { nombre: "Pozole litro", precio: 50, cantidad: parseInt(document.getElementById("pozole_ltr").value) || 0 },  
+    { nombre: "Pozole Chico", precio: 50, cantidad: parseInt(document.getElementById("pozole_chico").value) || 0 },
+    { nombre: "Quesadilla con carne", precio: 40, cantidad: parseInt(document.getElementById("quesa_con").value) || 0 },
+    { nombre: "Quesadilla sin carne", precio: 30, cantidad: parseInt(document.getElementById("quesa_sin").value) || 0 },  
+    { nombre: "Sopes con carne", precio: 20, cantidad: parseInt(document.getElementById("sopes_con").value) || 0 },
+    { nombre: "Sopes sin carne", precio: 15, cantidad: parseInt(document.getElementById("sopes_sin").value) || 0 },  
+   { nombre: "Tacos dorados con carne", precio: 15, cantidad: parseInt(document.getElementById("tacos_dor_con").value) || 0 },
+   { nombre: "Tacos dorados sin carne", precio: 12, cantidad: parseInt(document.getElementById("tacos_dor_sin").value) || 0 },
+    { nombre: "Aguas frescas", precio: 15, cantidad: parseInt(document.getElementById("aguas").value) || 0 },
+    { nombre: "Refresco", precio: 20, cantidad: parseInt(document.getElementById("soda").value) || 0 },
+    { nombre: "Gelatina", precio: 10, cantidad: parseInt(document.getElementById("gela").value) || 0 },
   ];
+
+
 
   let total = 0;
   const folio = generarFolio();
@@ -55,4 +64,14 @@ function guardarTicket() {
   link.download = `ticket_${folio}.txt`;
   link.click();
   URL.revokeObjectURL(url);
+}
+function limpiarCampos() {
+  const inputs = document.querySelectorAll('input[type="number"]');
+  inputs.forEach(input => input.value = '');
+
+  document.getElementById("total").textContent = "0.00";
+  document.getElementById("ticket").textContent = "";
+  ultimoTicket = "";
+
+  document.getElementById("pozole_gde").focus();
 }
