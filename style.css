@@ -70,13 +70,13 @@ pre {
   overflow-x: auto;
 }
 
-img {
+/*img {
   width: 720px;
   height: auto;
   display: block;
   margin: 0 auto 20px;
   border-radius: 20px;
-}
+}*/
 logo {
 max-width:300px;
   width:40%;
