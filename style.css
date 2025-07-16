@@ -71,11 +71,7 @@ pre {
 }
 
 img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
+  margin-top:0;
   display: block;
-  margin: 0 auto;
-  border-radius: 20px;
-  transform: scale(1.1);
+  margin-bottom: 0;
 }
