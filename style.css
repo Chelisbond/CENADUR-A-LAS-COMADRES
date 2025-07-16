@@ -77,3 +77,10 @@ img {
   margin: 0 auto 20px;
   border-radius: 20px;
 }
+img.logo {
+max-width:300px;
+  width:80%;
+  heigth:auto;
+  display: block;
+  margin:0 auto;
+}
