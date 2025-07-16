@@ -74,6 +74,5 @@ img {
   margin-top:0;
   display: block;
   margin-bottom: 0;
-  width:600px;
-  heigth: auto;
+transform: scale (0.8);
 }
