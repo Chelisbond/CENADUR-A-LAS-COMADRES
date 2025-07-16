@@ -71,6 +71,7 @@ pre {
 }
 
 img {
+  width: 400px;
   height: auto;
   display: block;
   margin: 0 auto 20px;
