@@ -69,22 +69,13 @@ pre {
   font-size: 4vw;
   overflow-x: auto;
 }
-div {
-display:flex;
-  justify-content:center;
-  align-items:center;
-}
+
 img {
-  width: 720px;
+  width: 100%;
+  max-width: 300px;
   height: auto;
   display: block;
   margin: 0 auto 20px;
   border-radius: 20px;
-}
-logo {
-max-width:100px;
-  width:40%;
-  heigth:auto;
-  display: block;
-  margin: 0 auto;
+  transform: scale(1.1);
 }
