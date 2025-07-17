@@ -52,16 +52,42 @@ const productos = [
 }
 
 function guardarTicket() {
-  if (!ultimoTicket) {
+  if (!ultimoTicket || !totalGlobal) {
     alert("Primero genera un ticket.");
     return;
   }
+
+  // 1. Guardar en Google Sheets
+  const data = {
+    total: totalGlobal  // Asegúrate que totalGlobal contenga el monto
+  };
+
+  fetch("https://script.google.com/macros/s/TU_URL_AQUI/exec", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  .then(response => response.json())
+  .then(result => {
+    if (result.status === "ok") {
+      console.log("✅ Ticket guardado en la nube.");
+    } else {
+      console.warn("⚠ No se pudo guardar en la nube.");
+    }
+  })
+  .catch(error => {
+    console.error("🚫 Error de conexión al guardar en la nube:", error);
+  });
+
+  // 2. Guardar local como archivo .txt
   const blob = new Blob([ultimoTicket], { type: "text/plain;charset=utf-8" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
   const folio = generarFolio();
-  link.download = `ticket_${folio}.txt`;
+  link.download = ticket_${folio}.txt;
   link.click();
   URL.revokeObjectURL(url);
 }
